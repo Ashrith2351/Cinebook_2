@@ -1,0 +1,39 @@
+<!-- Back Button -->
+<button class="back-button" (click)="goBack()">Back</button>
+
+<!-- book-tickets.component.html -->
+<div class="content-box">
+  <div class="ticket-booking">
+      <div class="movie-details-container">  <!-- This container will use flexbox to align items side by side -->
+        <div class="movie-image">
+          <img [src]="movie.image" alt="{{ movie.title }}">
+        </div>
+        <div class="movie-info">  <!-- Renamed from movie-details to movie-info for clarity -->
+          <h1>{{ movie.title }}</h1>
+          <p>{{ movie.genre }}</p>
+        </div>
+      </div>
+
+      <!-- Date Selector Merged with Cinema Listings -->
+      <div class="cinema-date-list">
+          <div class="date-selector">
+              <button *ngFor="let date of dates" (click)="selectDate(date)"
+                      [ngClass]="{'selected': isSelected(date)}" class="date-button">
+                  {{ date | date:'EEE, MMM d' }}
+              </button>
+          </div>
+
+          <!-- Cinema Listings and Showtimes -->
+          <div *ngFor="let cinema of cinemas; let i = index" class="cinema">
+              <div class="cinema-name">{{ cinema.name }}</div>
+              <div class="showtimes">
+                  <button *ngFor="let showtime of cinema.showtimes" (click)="selectShowtime(cinema, showtime)"
+                          class="showtime-button">
+                      {{ showtime }}
+                  </button>
+              </div>
+              <hr *ngIf="i < cinemas.length - 1"> <!-- Line separator except for the last item -->
+          </div>
+      </div>
+  </div>
+</div>

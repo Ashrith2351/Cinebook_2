@@ -1,0 +1,81 @@
+/* Navbar styling with gradient background */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #1f1f1f, #333);
+  padding: 15px 30px;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand h1 {
+  font-size: 36px;
+  margin: 0;
+  color: #fff;
+  letter-spacing: 2px;
+  font-family: 'Cinzel', serif; /* Add a cinematic font */
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  position: relative; /* This sets the positioning context for absolute positioning */
+}
+
+.nav-links input[type="text"] {
+  padding: 8px;
+  width: 200px;
+  border: 2px solid transparent;
+  margin-right: 10px;
+}
+
+.nav-links input[type="text"]:focus {
+  outline: none;
+  border-color: #4A90E2;
+  box-shadow: 0 0 8px rgba(74, 144, 226, 0.5);
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 100%; /* Positioned right below the search bar */
+  left: 0; /* Aligned to the left edge of the nav-links container */
+  width: 200px; /* Match width of the search input */
+  background-color: #0b0909;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.nav-links a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #0e0c01; /* Highlighted hover effect */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar-brand h1 {
+    font-size: 28px;
+  }
+
+  .nav-links a {
+    font-size: 16px;
+  }
+}

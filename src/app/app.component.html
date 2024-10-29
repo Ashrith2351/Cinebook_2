@@ -1,0 +1,15 @@
+<!-- app.component.html -->
+<nav class="navbar">
+  <div class="brand">
+    <h1><a routerLink="/home" style="color: inherit; text-decoration: none;">Cinebook</a></h1>
+  </div>
+  <div class="nav-links">
+    <input type="text" [(ngModel)]="searchText" (input)="onSearchChange()" placeholder="Search movies...">
+    <div class="dropdown-content" *ngIf="searchText">
+      <a *ngFor="let movie of filteredMovies" (click)="navigateToMovieDetails(movie.title)">{{ movie.title }}</a>
+    </div>
+    <a routerLink="/home">Home</a>
+    <a routerLink="/login">Login</a>
+  </div>
+</nav>
+<router-outlet></router-outlet>

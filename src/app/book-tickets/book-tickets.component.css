@@ -1,0 +1,152 @@
+/* Container for movie details that includes image and text info side by side */
+.movie-details-container {
+  display: flex;
+  align-items: flex-start; /* Aligns items at the start of the cross axis */
+  gap: 30px; /* Space between elements */
+}
+
+.movie-image {
+  flex-shrink: 0; /* Prevents the image from shrinking */
+}
+
+.movie-image img {
+  width: 100px; /* Fixed width for the movie poster */
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+.movie-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Aligns the text content vertically centered */
+  flex-grow: 1; /* Takes up the remaining space in the container */
+}
+
+.movie-info h1 {
+  margin: 0 0 20px 0; /* Space below the title */
+  font-size: 36px; /* Large font size for prominence */
+  color: #333; /* Dark color for contrast */
+}
+
+.movie-info p {
+  font-size: 18px;
+  color: #666; /* Lighter color for the genre and other details */
+  margin: 0; /* Removes default paragraph margin */
+}
+
+/* Further styles for the booking interface remain unchanged */
+
+/* Container for date selectors and cinema listings */
+.cinema-date-list {
+  background-color: #f8f8f8;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+.date-selector {
+  display: flex;
+  justify-content: left;
+  margin-bottom: 20px; /* Space between date selector and cinema listings */
+}
+
+.date-selector .date-button {
+  background-color: #ddd;
+  color: #333;
+  margin-right: 10px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  transition: background-color 0.2s;
+}
+.date-button {
+  background-color: #ddd;
+  color: #333;
+  margin-right: 10px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  transition: background-color 0.2s, color 0.2s;
+  cursor: pointer; /* Indicates the button is clickable */
+}
+.date-button:hover {
+  background-color: #bbb; /* Darker shade on hover */
+  color: white; /* Change text color for better visibility on hover */
+}
+.date-selector .date-button.selected {
+  background-color: #0056b3;
+  color: white;
+}
+
+/* Cinema and showtimes styling */
+.cinema {
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.cinema-name {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.showtimes .showtime-button {
+  background-color: #28a745;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 10px;
+  margin-right: 5px;
+  transition: background-color 0.3s;
+}
+
+.showtimes .showtime-button:hover {
+  background-color: #1d6835;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: #ccc;
+  margin: 20px 0; /* Spacing around the horizontal line */
+}
+button.btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px; /* Space between the description and the button */
+}
+
+button.btn:hover {
+  background-color: #0056b3;
+}
+.back-button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #007BFF;  /* Primary blue color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+
+.content-box {
+  background-color: #fff;  /* White background for the box */
+  padding: 20px;           /* Padding around the content for spacing */
+  margin: 20px auto;       /* Center the box and provide outer margin */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);  /* Shadow for a subtle 3D effect */
+  border-radius: 10px;     /* Rounded corners for a smoother look */
+  width: 90%;              /* Adjust width as needed */
+}

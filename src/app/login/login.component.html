@@ -1,0 +1,37 @@
+<div class="login-container">
+  <h2>Login to Cinebook</h2>
+  <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" id="email" formControlName="email" placeholder="Enter your email" />
+      <div *ngIf="loginForm.get('email')?.errors?.['required'] && loginForm.get('email')?.touched" class="error-message">
+        * Email is required
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" formControlName="password" placeholder="Enter your password" />
+      <div *ngIf="loginForm.get('password')?.errors?.['required'] && loginForm.get('password')?.touched" class="error-message">
+        * Password is required
+      </div>
+    </div>
+    <a href="#" (click)="openForgotPasswordModal(); $event.preventDefault()" class="forgot-password">Forgot Password?</a>
+    
+    <div class="modal" *ngIf="showForgotPasswordModal">
+      <div class="modal-content">
+        <h3>An email will be sent to reset your password</h3>
+        <form (ngSubmit)="onForgotPasswordSubmit()">
+          <input type="email" [(ngModel)]="forgotPasswordEmail" placeholder="Enter your email" required>
+          <button type="submit">Send Email</button>
+        </form>
+        <button (click)="closeForgotPasswordModal()">Close</button>
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="loginForm.invalid">Login</button>
+    <div class="create-account">
+      <p>Don't have an account?</p>
+      <button (click)="goToSignup()">Create Account</button>
+    </div>
+  </form>
+</div>
